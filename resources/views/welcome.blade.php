@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        @vite('resources/css/app.css')
 
         <!-- Styles -->
         <style>
@@ -134,6 +135,14 @@
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
+            </div>
+            <div>
+            <form method="GET" action="{{ url('/testFußballDaten') }}">
+                @csrf
+                <button type="submit" class="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full !important">
+                    Hole Testdaten von Fußball API
+                </button>
+            </form>
             </div>
         </div>
     </body>

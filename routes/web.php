@@ -28,4 +28,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/testFußballDaten', function() {
+    $url = 'https://api.openligadb.de/getmatchdata/bl1/2020/8';
+
+    $data = file_get_contents($url);
+    $matches = json_decode($data, true);
+    print_r($matches);
+    exit;
+});
+
 require __DIR__.'/auth.php';
